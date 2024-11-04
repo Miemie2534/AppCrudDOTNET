@@ -1,0 +1,51 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "บันทึกข้อมูลพนักงาน";
+}
+
+<h2>ข้อมูลพนักงาน</h2>
+
+<form asp-action="CreateEmployee" asp-controller="Employee" method="post">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="mb-3 col-2">
+                <label asp-for="EmployeeId" class="form-label">รหัสพนักงาน</label>
+                <input asp-for="EmployeeId" type="text" class="form-control">
+            </div>
+            <div class="mb-3 col-2">
+                <label asp-for="Date" class="form-label">วันที่</label>
+                <input asp-for="Date" type="date" class="form-control">
+            </div>
+        </div>       
+        <div class="row">
+            <div class="mb-3 col-2">
+                <label asp-for="Firstname" class="form-label">ชื่อ</label>
+                <input asp-for="Firstname" type="text" class="form-control">
+            </div>
+            <div class="mb-3 col-2">
+                <label asp-for="Lastname" class="form-label">นามสกุล</label>
+                <input asp-for="Lastname" type="text" class="form-control">
+            </div>
+            <div class="mb-3 col-2">
+                <label asp-for="Department" class="form-label">แผนก/ส่วนงาน</label>
+                <input asp-for="Department" type="text" class="form-control">
+            </div>
+        </div>
+        
+        
+        <div class="mb-3 col-4">
+            <label asp-for="Title" class="form-label">อาการ</label>
+            <input asp-for="Title" type="text" class="form-control">
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Description" class="form-label">รายละเอียด</label>
+            <textarea asp-for="Description" type="text" class="form-control"></textarea>
+        </div>
+        <div class="mb-3 col-2">
+            <label asp-for="Hospital" class="form-label">นำส่ง</label>
+            <input asp-for="Hospital" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+</form>
+

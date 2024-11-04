@@ -1,0 +1,33 @@
+﻿@model Offer
+@{
+    ViewData["Title"] = "บันทึกข้อมูลรายการเสนอต่างๆ";
+}
+
+<h2>บันทึกข้อมูลการเสนอต่างๆ</h2>
+
+<form asp-action="OfferCreate" asp-controller="Offer" method="post">
+    <div class="container mt-2">
+        <div class="mb-3 col-2">
+            <label asp-for="DateTime" class="form-label">วันที่</label>
+            <input asp-for="DateTime" type="date" class="form-control">
+        </div>
+        <div class="mb-3 col-1">
+            <select asp-for="Select" class="form-select">
+                <option selected>สถานะ</option>
+                <option value="เสนอซ่อม">เสนอซ่อม</option>
+                <option value="เสนอสร้าง">เสนอสร้าง</option>
+                <option value="เสนอซื้อ">เสนอซื้อ</option>
+            </select>
+        </div>
+        <div class="mb-3 col-3">
+            <label asp-for="Description" class="form-label">รายละเอียด</label>
+            <textarea asp-for="Description" type="text" class="form-control"></textarea>
+        </div>
+        <div class="mb-3 col-2">
+            <label asp-for="Name" class="form-label">ชื่อผู้เสนอ</label>
+            <input asp-for="Name" type="text" class="form-control">
+        </div>
+        <button onclick="return confirm('เพิ่มข้อมูลเรียบร้อย')" type="submit" class="btn btn-primary mt-2">Submit</button>
+    </div>
+</form>
+

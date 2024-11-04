@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<div class="d-flex justify-content-center mt-lg-5 align-items-center">
+    <div class="d-flex gap-lg-5 align-items-center justify-content-center">
+        <div class="text-center mt-2">
+            <a asp-action="ListEmer"><img src="./finance-and-business.png" width="100" /></a>
+            <h4 class="mt-2">ข้อมูลรับแจ้งเหตุ</h4>
+        </div>
+        <div class="text-center mt-2">
+            <a asp-action="ListEmployee" asp-controller="Employee"><img src="./employee.png" width="100" /></a>
+            <h4 class="mt-2">ข้อมูลพนักงาน</h4>
+        </div>
+        <div class="text-center mt-2">
+            <a asp-action="OfferList" asp-controller="Offer"><img src="./troubleshooting.png" width="100" /></a>
+            <h4 class="mt-2">งานซ่อม</h4>
+        </div>
+        <div class="text-center mt-2">
+            <a asp-action="Index" asp-controller="Animal"><img src="./kitty.png" width="100" /></a>
+            <h4 class="mt-2">ข้อมูลจับสัตว์</h4>
+        </div>
+    </div>    
+</div>
+

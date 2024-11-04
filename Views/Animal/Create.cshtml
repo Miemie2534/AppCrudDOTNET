@@ -1,0 +1,30 @@
+﻿@model Animal
+
+<h2>บันทึกข้อมูลการจับสัตว์</h2>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="col-2 mb-2">
+            <label asp-for="Data">Image</label>
+            <input class="form-control mt-2" asp-for="Data" type="file" name="file" required />
+        </div>
+        <div class="mb-2 col-2">
+            <label class="form-label" asp-for="Date">Date</label>
+            <input class="form-control" asp-for="Date" type="date" name="date" required />
+        </div>
+        <div class="col-3">
+            <label class="form-label" asp-for="Name">ชื่อผู้แจ้ง</label>
+            <input class="form-control" asp-for="Name" type="text" name="name" required />
+        </div>
+        <div class="col-4">
+            <label class="form-label" asp-for="Description">รายละเอียด</label>
+            <textarea class="form-control" asp-for="Description" type="text" name="description"></textarea>
+        </div>
+        <div class="col-4">
+            <label class="form-label" asp-for="Area">สถานที่</label>
+            <input class="form-control" asp-for="Area" type="text" name="area" />
+        </div>
+        <button class="btn btn-primary mt-2" type="submit">Create</button>
+    </div>   
+</form>
+

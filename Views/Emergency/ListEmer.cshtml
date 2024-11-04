@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EmerList>
+@{
+    ViewData["Title"] = "ข้อมูลการแจ้งเหตุ";
+}
+
+
+<a asp-action="CreateEmer" class="btn btn-success mt-4 mb-3">Create</a>
+
+@if (Model.Count() > 0)
+{
+    <h2>ข้อมูลรับแจ้งเหตุ</h2>
+    <div class=" table-responsive">
+        <table class="table table-sm table container mt-4">
+            <thead>
+                <tr>
+                    <th class="text-center">ลำดับ</th>
+                    <th class="text-center">วันที่</th>
+                    <th class="text-center">เรื่อง</th>
+                    <th class="text-center">รายละเอียด</th>
+                    <th class="text-center">การแก้ไข</th>
+                    <th class="text-center">ผู้บันทึก</th>
+                    <th class="text-center">สถานะ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="text-center">
+                        <th>@item.Id</th>
+                        <td>@item.DateTime</td>
+                        <td>@item.Title</td>
+                        <td>@item.Description</td>
+                        <td>@item.Edit</td>
+                        <td>@item.Recroder</td>
+                        <td>
+                            <a class="p-2"
+                               asp-action="Edit"
+                               asp-controller="Emergency"
+                               asp-route-id="@item.Id"><img src="/edit.png" /></a>
+                            <a class="p-2"
+                               asp-action="DeleteEmer"
+                               asp-controller="Emergency"
+                               asp-route-id="@item.Id" onclick="return confirm ('คุณแน่ใจว่าจะลบ @item.Title หรือไม่ ?')"><img src="/delete.png" /></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+}
+else
+{
+    <div class="alert alert-secondary">ไม่มีข้อมูลแสดง</div>
+}
